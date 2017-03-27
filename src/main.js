@@ -1,5 +1,3 @@
-//main.js
-var greeter = require('./Greeter.js');
-require('./main.css');
+var ZU = require('./string.js');
 
-document.getElementById('root').appendChild(greeter());
+document.getElementById('root').innerHTML=ZU.getMD5String('123','abc','aaa');
