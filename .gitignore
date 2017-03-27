@@ -1,3 +1,4 @@
 # Build results
-build/
+/build/*
+!/build/build.js
 node_modules/

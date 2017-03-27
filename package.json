@@ -11,10 +11,12 @@
     "webpack": "^2.3.2",
     "webpack-dev-server": "^2.4.2"
   },
-  "dependencies": {},
+  "dependencies": {
+    "ora": "^1.2.0"
+  },
   "scripts": {
     "start": "webpack-dev-server --progress",
-    "build": "NODE_ENV=production webpack --config ./webpack.production.config.js --progress"
+    "build": "node build/build.js"
   },
   "description": "项目中整理的各种公用方法，都可以整理到这个项目中。 调用项目使用ZU",
   "repository": {
