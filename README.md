@@ -1,5 +1,16 @@
-项目中整理的各种公用方法，都可以整理到这个项目中。
-调用项目使用ZU
+# 项目中整理的各种JS公用方法，都可以整理到这个项目中。
 
-以下是文档：
+## 如何使用
+`
+var ZU = require('./zeego.utility.min.js');
+ZU.formatDate('yyyy_MM_dd hh:mm:ss 星期w');
+`
+
+## 如何二次开发，测试
+首次使用，安装插件：`cnpm install`
+开发测试：`cnpm start`，会启动一个webpack dev server，代码有改动，页面自动刷新。测试地址：localhost:8080
+编译打包：`cnpm run build`
+
+
+
 
