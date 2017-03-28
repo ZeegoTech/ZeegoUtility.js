@@ -1,10 +1,8 @@
 # 项目中整理的各种JS公用方法，都可以整理到这个项目中。
 
 ## 如何使用
-`
-var ZU = require('./zeego.utility.min.js');<br/>
-ZU.formatDate('yyyy_MM_dd hh:mm:ss 星期w');<br/>
-`
+`var ZU = require('./zeego.utility.min.js');`<br/>
+`ZU.formatDate('yyyy_MM_dd hh:mm:ss 星期w');`<br/>
 
 ## 如何二次开发，测试
 首次使用，安装插件：`cnpm install`<br/>
