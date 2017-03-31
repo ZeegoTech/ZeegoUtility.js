@@ -12,6 +12,13 @@
 
 ## 如何生成文档
 安装YUIDoc `cnpm install -g yuidoc`<br/>
+进入目录'C:\Users\[当前用户]\AppData\Roaming\npm\node_modules\yuidocjs\themes\default'，修改theme.json文件，内容如下:<br/>
+'
+{
+    "yuiGridsUrl": "https://zeegotech.github.io/CDN/yuidoc/cssgrids-min.css",
+    "yuiSeedUrl": "https://zeegotech.github.io/CDN/yuidoc/yui-min.js"
+}
+'
 进入根目录，执行`yuidoc . -o ./docs`<br/>
 
 
