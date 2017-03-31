@@ -1,4 +1,5 @@
 # 项目中整理的各种JS公用方法，都可以整理到这个项目中。
+文档地址：[https://zeegotech.github.io/ZeegoUtility.js](https://zeegotech.github.io/ZeegoUtility.js)
 
 ## 如何使用
 `var ZU = require('./zeego.utility.min.js');`<br/>
@@ -11,7 +12,7 @@
 
 ## 如何生成文档
 安装YUIDoc `cnpm install -g yuidoc`<br/>
-进入根目录，执行`yuidoc . -o ./doc`<br/>
+进入根目录，执行`yuidoc . -o ./docs`<br/>
 
 
 
