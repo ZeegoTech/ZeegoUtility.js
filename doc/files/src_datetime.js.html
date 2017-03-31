@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>src\datetime.js</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="../assets/css/logo.png" title="" width="117" height="52"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: </em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/ZU.html">ZU</a></li>
+                                <li><a href="../classes/ZU.Array.html">ZU.Array</a></li>
+                                <li><a href="../classes/ZU.Datetime.html">ZU.Datetime</a></li>
+                                <li><a href="../classes/ZU.Page.html">ZU.Page</a></li>
+                                <li><a href="../classes/ZU.Storage.html">ZU.Storage</a></li>
+                                <li><a href="../classes/ZU.String.html">ZU.String</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: src\datetime.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/**
+* 日期相关的操作库
+*
+* @class ZU.Datetime
+*/
+
+define([&#x27;./core.js&#x27;], function(ZU) {
+
+    /**
+    * 格式化日期 formatDate(&#x27;yyyy_MM_dd hh:mm:ss:SS 星期w 第q季度&#x27;)
+    *
+    * @method formatDate
+    * @param {string} format 格式&#x27;yyyy_MM_dd hh:mm:ss:SS 星期w 第q季度&#x27;
+    * @param {date} date 要转化的日期，留空则为当前日期
+    * @return {string} 格式化后的字符串
+    */
+    ZU.formatDate = function(format, date) {
+
+        if (!date) {
+            date = new Date();
+        }
+
+        var Week = [&#x27;日&#x27;, &#x27;一&#x27;, &#x27;二&#x27;, &#x27;三&#x27;, &#x27;四&#x27;, &#x27;五&#x27;, &#x27;六&#x27;];
+        var o = {
+            &#x27;y+&#x27;: date.getYear(), // year
+            &#x27;M+&#x27;: date.getMonth() + 1, // month
+            &#x27;d+&#x27;: date.getDate(), // day
+            &#x27;h+&#x27;: date.getHours(), // hour
+            &#x27;H+&#x27;: date.getHours(), // hour
+            &#x27;m+&#x27;: date.getMinutes(), // minute
+            &#x27;s+&#x27;: date.getSeconds(), // second
+            &#x27;q+&#x27;: Math.floor((date.getMonth() + 3) / 3), // quarter
+            &#x27;S&#x27;: date.getMilliseconds(), // millisecond
+            &#x27;w&#x27;: Week[date.getDay()]
+        }
+
+        if (/(y+)/.test(format)) {
+            format = format.replace(RegExp.$1, (date.getFullYear() + &#x27;&#x27;).substr(4 - RegExp.$1.length));
+        }
+
+        for (var k in o) {
+
+            if (new RegExp(&#x27;(&#x27; + k + &#x27;)&#x27;).test(format)) {
+                format = format.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : (&#x27;00&#x27; + o[k]).substr((&#x27;&#x27; + o[k]).length));
+            }
+
+        }
+
+        return format;
+    };
+
+    return ZU;
+});
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

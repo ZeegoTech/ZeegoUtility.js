@@ -1,0 +1,784 @@
+{
+    "project": {},
+    "files": {
+        "src\\array.js": {
+            "name": "src\\array.js",
+            "modules": {},
+            "classes": {
+                "ZU.Array": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\core.js": {
+            "name": "src\\core.js",
+            "modules": {},
+            "classes": {
+                "ZU": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\datetime.js": {
+            "name": "src\\datetime.js",
+            "modules": {},
+            "classes": {
+                "ZU.Datetime": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\page.js": {
+            "name": "src\\page.js",
+            "modules": {},
+            "classes": {
+                "ZU.Page": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\storage.js": {
+            "name": "src\\storage.js",
+            "modules": {},
+            "classes": {
+                "ZU.Storage": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\string.js": {
+            "name": "src\\string.js",
+            "modules": {},
+            "classes": {
+                "ZU.String": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {},
+    "classes": {
+        "ZU.Array": {
+            "name": "ZU.Array",
+            "shortname": "ZU.Array",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\array.js",
+            "line": 1,
+            "description": "数组相关的操作库"
+        },
+        "ZU": {
+            "name": "ZU",
+            "shortname": "ZU",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\core.js",
+            "line": 1,
+            "description": "定义默认的类ZU",
+            "is_constructor": 1
+        },
+        "ZU.Datetime": {
+            "name": "ZU.Datetime",
+            "shortname": "ZU.Datetime",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\datetime.js",
+            "line": 1,
+            "description": "日期相关的操作库"
+        },
+        "ZU.Page": {
+            "name": "ZU.Page",
+            "shortname": "ZU.Page",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\page.js",
+            "line": 1,
+            "description": "网页，浏览器相关的操作库"
+        },
+        "ZU.Storage": {
+            "name": "ZU.Storage",
+            "shortname": "ZU.Storage",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\storage.js",
+            "line": 1,
+            "description": "本地存储相关的操作库"
+        },
+        "ZU.String": {
+            "name": "ZU.String",
+            "shortname": "ZU.String",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\string.js",
+            "line": 1,
+            "description": "字符串相关的操作库"
+        }
+    },
+    "elements": {},
+    "classitems": [
+        {
+            "file": "src\\array.js",
+            "line": 9,
+            "description": "删除数组中存在重复的元素",
+            "itemtype": "method",
+            "name": "getUniqueArray",
+            "params": [
+                {
+                    "name": "someArray",
+                    "description": "数组",
+                    "type": "Array"
+                }
+            ],
+            "return": {
+                "description": "删除重复后的数组",
+                "type": "Array"
+            },
+            "class": "ZU.Array"
+        },
+        {
+            "file": "src\\array.js",
+            "line": 37,
+            "description": "判断数组中是否存在重复的元素",
+            "itemtype": "method",
+            "name": "ifRepeatInArray",
+            "params": [
+                {
+                    "name": "someArray",
+                    "description": "数组",
+                    "type": "Array"
+                }
+            ],
+            "return": {
+                "description": "是否存在重复",
+                "type": "Boolean"
+            },
+            "class": "ZU.Array"
+        },
+        {
+            "file": "src\\array.js",
+            "line": 65,
+            "description": "判断某个值是否在数组中",
+            "itemtype": "method",
+            "name": "isInArray",
+            "params": [
+                {
+                    "name": "someArray",
+                    "description": "数组",
+                    "type": "Array"
+                },
+                {
+                    "name": "value",
+                    "description": "值",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "是否在数组中",
+                "type": "Boolean"
+            },
+            "class": "ZU.Array"
+        },
+        {
+            "file": "src\\array.js",
+            "line": 85,
+            "description": "判断某个值在数组中的位置",
+            "itemtype": "method",
+            "name": "indexInArray",
+            "params": [
+                {
+                    "name": "someArray",
+                    "description": "数组",
+                    "type": "Array"
+                },
+                {
+                    "name": "value",
+                    "description": "值",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "在数组中的位置",
+                "type": "Number"
+            },
+            "class": "ZU.Array"
+        },
+        {
+            "file": "src\\datetime.js",
+            "line": 9,
+            "description": "格式化日期 formatDate('yyyy_MM_dd hh:mm:ss:SS 星期w 第q季度')",
+            "itemtype": "method",
+            "name": "formatDate",
+            "params": [
+                {
+                    "name": "format",
+                    "description": "格式'yyyy_MM_dd hh:mm:ss:SS 星期w 第q季度'",
+                    "type": "String"
+                },
+                {
+                    "name": "date",
+                    "description": "要转化的日期，留空则为当前日期",
+                    "type": "Date"
+                }
+            ],
+            "return": {
+                "description": "格式化后的字符串",
+                "type": "String"
+            },
+            "class": "ZU.Datetime"
+        },
+        {
+            "file": "src\\page.js",
+            "line": 9,
+            "description": "从网页地址里获取地址参数的值",
+            "itemtype": "method",
+            "name": "getQueryString",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "参数的名字",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "参数的值",
+                "type": "String"
+            },
+            "class": "ZU.Page"
+        },
+        {
+            "file": "src\\page.js",
+            "line": 27,
+            "description": "加入收藏夹",
+            "itemtype": "method",
+            "name": "addFavorite",
+            "params": [
+                {
+                    "name": "sURL",
+                    "description": "收藏链接地址",
+                    "type": "String"
+                },
+                {
+                    "name": "sTitle",
+                    "description": "收藏标题",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "加入失败会alert",
+                "type": "Void"
+            },
+            "class": "ZU.Page"
+        },
+        {
+            "file": "src\\page.js",
+            "line": 47,
+            "description": "设为首页",
+            "itemtype": "method",
+            "name": "setHomepage",
+            "params": [
+                {
+                    "name": "homeurl",
+                    "description": "链接地址",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "加入失败会alert",
+                "type": "Void"
+            },
+            "class": "ZU.Page"
+        },
+        {
+            "file": "src\\page.js",
+            "line": 74,
+            "description": "判断是否移动设备访问",
+            "itemtype": "method",
+            "name": "isMobileDevice",
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "ZU.Page"
+        },
+        {
+            "file": "src\\storage.js",
+            "line": 9,
+            "description": "存储JS对象到本地存储",
+            "itemtype": "method",
+            "name": "storeObject",
+            "params": [
+                {
+                    "name": "key",
+                    "description": "存储的key",
+                    "type": "String"
+                },
+                {
+                    "name": "value",
+                    "description": "存储的对象",
+                    "type": "Object"
+                }
+            ],
+            "class": "ZU.Storage"
+        },
+        {
+            "file": "src\\storage.js",
+            "line": 20,
+            "description": "存储字符串到本地存储",
+            "itemtype": "method",
+            "name": "storeString",
+            "params": [
+                {
+                    "name": "key",
+                    "description": "存储的key",
+                    "type": "String"
+                },
+                {
+                    "name": "value",
+                    "description": "存储的对象",
+                    "type": "String"
+                }
+            ],
+            "class": "ZU.Storage"
+        },
+        {
+            "file": "src\\storage.js",
+            "line": 31,
+            "description": "删除本地存储",
+            "itemtype": "method",
+            "name": "removeStorage",
+            "params": [
+                {
+                    "name": "key",
+                    "description": "存储的key",
+                    "type": "String"
+                }
+            ],
+            "class": "ZU.Storage"
+        },
+        {
+            "file": "src\\storage.js",
+            "line": 41,
+            "description": "从本地存储获取JS对象",
+            "itemtype": "method",
+            "name": "retrieveObject",
+            "params": [
+                {
+                    "name": "key",
+                    "description": "存储的key",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "JS对象",
+                "type": "Object"
+            },
+            "class": "ZU.Storage"
+        },
+        {
+            "file": "src\\storage.js",
+            "line": 58,
+            "description": "从本地存储获取字符串",
+            "itemtype": "method",
+            "name": "retrieveString",
+            "params": [
+                {
+                    "name": "key",
+                    "description": "存储的key",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "字符串",
+                "type": "String"
+            },
+            "class": "ZU.Storage"
+        },
+        {
+            "file": "src\\storage.js",
+            "line": 69,
+            "description": "设置cookie值",
+            "itemtype": "method",
+            "name": "setCookie",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "cookie的名字",
+                    "type": "String"
+                },
+                {
+                    "name": "value",
+                    "description": "cookie的值",
+                    "type": "String"
+                },
+                {
+                    "name": "hours",
+                    "description": "保存时间，小时",
+                    "type": "Number"
+                },
+                {
+                    "name": "domain",
+                    "description": "所在域名：例:zeego.cn",
+                    "type": "String"
+                }
+            ],
+            "class": "ZU.Storage"
+        },
+        {
+            "file": "src\\storage.js",
+            "line": 88,
+            "description": "获取cookie值",
+            "itemtype": "method",
+            "name": "getCookie",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "cookie的名字",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "cookie值",
+                "type": "String"
+            },
+            "class": "ZU.Storage"
+        },
+        {
+            "file": "src\\string.js",
+            "line": 9,
+            "description": "获取随机的字符串，常常用在接口调用的时候，附带随机字符串",
+            "itemtype": "method",
+            "name": "getNonceString",
+            "params": [
+                {
+                    "name": "length",
+                    "description": "字符串的长度，默认为15",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "随机的字符串",
+                "type": "String"
+            },
+            "class": "ZU.String"
+        },
+        {
+            "file": "src\\string.js",
+            "line": 21,
+            "description": "获得MD5加密后的字符串，支持多参数传入",
+            "itemtype": "method",
+            "name": "getMD5String",
+            "params": [
+                {
+                    "name": "arguments",
+                    "description": "字符串，传入多个字符串的话，拼接了以后md5",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "MD5加密后的字符串",
+                "type": "String"
+            },
+            "class": "ZU.String"
+        },
+        {
+            "file": "src\\string.js",
+            "line": 46,
+            "description": "获得html编码后的字符串",
+            "itemtype": "method",
+            "name": "htmlEncode",
+            "params": [
+                {
+                    "name": "str",
+                    "description": "编码前的字符串",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "编码后的字符串",
+                "type": "String"
+            },
+            "class": "ZU.String"
+        },
+        {
+            "file": "src\\string.js",
+            "line": 59,
+            "description": "获得html解码后的字符串",
+            "itemtype": "method",
+            "name": "htmlDecode",
+            "params": [
+                {
+                    "name": "str",
+                    "description": "解码前的字符串",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "解码后的字符串",
+                "type": "String"
+            },
+            "class": "ZU.String"
+        },
+        {
+            "file": "src\\string.js",
+            "line": 72,
+            "description": "删除首尾空字符",
+            "itemtype": "method",
+            "name": "trim",
+            "params": [
+                {
+                    "name": "str",
+                    "description": "字符串",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "字符串",
+                "type": "String"
+            },
+            "class": "ZU.String"
+        },
+        {
+            "file": "src\\string.js",
+            "line": 83,
+            "description": "删除左边空字符",
+            "itemtype": "method",
+            "name": "trimLeft",
+            "params": [
+                {
+                    "name": "str",
+                    "description": "字符串",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "字符串",
+                "type": "String"
+            },
+            "class": "ZU.String"
+        },
+        {
+            "file": "src\\string.js",
+            "line": 94,
+            "description": "删除右边空字符",
+            "itemtype": "method",
+            "name": "trimRight",
+            "params": [
+                {
+                    "name": "str",
+                    "description": "字符串",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "字符串",
+                "type": "String"
+            },
+            "class": "ZU.String"
+        },
+        {
+            "file": "src\\string.js",
+            "line": 105,
+            "description": "判断是否是空字符串",
+            "itemtype": "method",
+            "name": "isNullString",
+            "params": [
+                {
+                    "name": "str",
+                    "description": "字符串",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "是否是空字符串",
+                "type": "Boolean"
+            },
+            "class": "ZU.String"
+        },
+        {
+            "file": "src\\string.js",
+            "line": 121,
+            "description": "验证是否是合法的身份证号码",
+            "itemtype": "method",
+            "name": "verifyICNumber",
+            "params": [
+                {
+                    "name": "code",
+                    "description": "身份证号码",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "是否是合法的身份证号码",
+                "type": "Boolean"
+            },
+            "class": "ZU.String"
+        },
+        {
+            "file": "src\\string.js",
+            "line": 212,
+            "description": "验证是否是合法的手机号码",
+            "itemtype": "method",
+            "name": "verifyMobile",
+            "params": [
+                {
+                    "name": "str",
+                    "description": "手机号码",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "是否是合法的手机号码",
+                "type": "Boolean"
+            },
+            "class": "ZU.String"
+        },
+        {
+            "file": "src\\string.js",
+            "line": 229,
+            "description": "匹配国内电话号码(0511-4405222 或 021-87888822)",
+            "itemtype": "method",
+            "name": "verifyTelephone",
+            "params": [
+                {
+                    "name": "str",
+                    "description": "固定电话号码",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "是否匹配",
+                "type": "Boolean"
+            },
+            "class": "ZU.String"
+        },
+        {
+            "file": "src\\string.js",
+            "line": 246,
+            "description": "判断输入是否是有效的电子邮件",
+            "itemtype": "method",
+            "name": "verifyEmail",
+            "params": [
+                {
+                    "name": "str",
+                    "description": "电子邮箱地址",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "是否是有效的电子邮件",
+                "type": "Boolean"
+            },
+            "class": "ZU.String"
+        },
+        {
+            "file": "src\\string.js",
+            "line": 263,
+            "description": "字符串超出省略",
+            "itemtype": "method",
+            "name": "cutString",
+            "params": [
+                {
+                    "name": "str",
+                    "description": "字符串",
+                    "type": "String"
+                },
+                {
+                    "name": "len",
+                    "description": "保留的长度",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "字符串",
+                "type": "String"
+            },
+            "class": "ZU.String"
+        },
+        {
+            "file": "src\\string.js",
+            "line": 286,
+            "description": "字符串替换全部",
+            "itemtype": "method",
+            "name": "stringReplaceAll",
+            "params": [
+                {
+                    "name": "str",
+                    "description": "字符串",
+                    "type": "String"
+                },
+                {
+                    "name": "s1",
+                    "description": "需要替换的词",
+                    "type": "String"
+                },
+                {
+                    "name": "s2",
+                    "description": "替换后的词",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "字符串",
+                "type": "String"
+            },
+            "class": "ZU.String"
+        },
+        {
+            "file": "src\\string.js",
+            "line": 299,
+            "description": "判断是否为网址",
+            "itemtype": "method",
+            "name": "isURLString",
+            "params": [
+                {
+                    "name": "strUrl",
+                    "description": "网址字符串",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "是否为网址",
+                "type": "Boolean"
+            },
+            "class": "ZU.String"
+        },
+        {
+            "file": "src\\string.js",
+            "line": 316,
+            "description": "获取字符串数值部分",
+            "itemtype": "method",
+            "name": "getNumberFromString",
+            "params": [
+                {
+                    "name": "str",
+                    "description": "字符串",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "数值部分",
+                "type": "Number"
+            },
+            "class": "ZU.String"
+        }
+    ],
+    "warnings": []
+}

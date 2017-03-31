@@ -1,14 +1,30 @@
+/**
+* 字符串相关的操作库
+*
+* @class ZU.String
+*/
+
 define(['./core.js', './md5.js'], function(ZU, md5) {
 
-    // ***获取随机的字符串，常常用在接口调用的时候，附带随机字符串*** //
-    // length:字符串的长度，默认为15
+    /**
+    * 获取随机的字符串，常常用在接口调用的时候，附带随机字符串
+    *
+    * @method getNonceString
+    * @param {string} length 字符串的长度，默认为15
+    * @return {string} 随机的字符串
+    */
     ZU.getNonceString = function(length) {
         length = length || 15;
         return Math.random().toString(36).substr(2, length);
     };
 
-    // ***获得MD5加密后的字符串，支持多参数传入*** //
-    // arguments：字符串，传入多个字符串的话，拼接了以后md5
+    /**
+    * 获得MD5加密后的字符串，支持多参数传入
+    *
+    * @method getMD5String
+    * @param {string} arguments 字符串，传入多个字符串的话，拼接了以后md5
+    * @return {string} MD5加密后的字符串
+    */
     ZU.getMD5String = function() {
         var args = arguments;
 
@@ -27,43 +43,72 @@ define(['./core.js', './md5.js'], function(ZU, md5) {
         return result;
     };
 
-    // ***获得html编码后的字符串*** //
-    // str：编码前的字符串
+    /**
+    * 获得html编码后的字符串
+    *
+    * @method htmlEncode
+    * @param {string} str 编码前的字符串
+    * @return {string} 编码后的字符串
+    */
     ZU.htmlEncode = function(str) {
         var div = document.createElement('div');
         div.appendChild(document.createTextNode(str));
         return div.innerHTML;
     };
 
-    // ***获得html解码后的字符串*** //
-    // str：解码前的字符串
+    /**
+    * 获得html解码后的字符串
+    *
+    * @method htmlDecode
+    * @param {string} str 解码前的字符串
+    * @return {string} 解码后的字符串
+    */
     ZU.htmlDecode = function(str) {
         var div = document.createElement('div');
         div.innerHTML = str;
         return div.innerText || div.textContent;
     };
 
-    // ***删除首尾空字符*** //
-    // str：字符串
+    /**
+    * 删除首尾空字符
+    *
+    * @method trim
+    * @param {string} str 字符串
+    * @return {string} 字符串
+    */
     ZU.trim = function(str) {
         return str.replace(/(^\s*)|(\s*$)/g, '');
     };
 
-    // ***删除左边空字符*** //
-    // str：字符串
+    /**
+    * 删除左边空字符
+    *
+    * @method trimLeft
+    * @param {string} str 字符串
+    * @return {string} 字符串
+    */
     ZU.trimLeft = function(str) {
         return str.replace(/(^\s*)/g, '');
     };
 
-    // ***删除右边空字符*** //
-    // str：字符串
+    /**
+    * 删除右边空字符
+    *
+    * @method trimRight
+    * @param {string} str 字符串
+    * @return {string} 字符串
+    */
     ZU.trimRight = function(str) {
         return str.replace(/(\s*$)/g, '');
     };
 
-
-    // ***判断是否是空字符串*** //
-    // str：字符串
+    /**
+    * 判断是否是空字符串
+    *
+    * @method isNullString
+    * @param {string} str 字符串
+    * @return {boolean} 是否是空字符串
+    */
     ZU.isNullString = function(str) {
 
         if (str == undefined || str == null || str == '' || ZU.trim(str) == '') {
@@ -73,8 +118,13 @@ define(['./core.js', './md5.js'], function(ZU, md5) {
         return false;
     };
 
-    // ***验证是否是合法的身份证号码*** //
-    // code：身份证号码
+    /**
+    * 验证是否是合法的身份证号码
+    *
+    * @method verifyICNumber
+    * @param {string} code 身份证号码
+    * @return {boolean} 是否是合法的身份证号码
+    */
     ZU.verifyICNumber = function(code) {
         var city = {
             11: '北京',
@@ -159,8 +209,13 @@ define(['./core.js', './md5.js'], function(ZU, md5) {
         return pass;
     };
 
-    // ***验证是否是合法的手机号码*** //
-    // str：手机号码
+    /**
+    * 验证是否是合法的手机号码
+    *
+    * @method verifyMobile
+    * @param {string} str 手机号码
+    * @return {boolean} 是否是合法的手机号码
+    */
     ZU.verifyMobile = function(str) {
         var pattern = /^1[23456789]\d{9}$/;
 
@@ -171,8 +226,13 @@ define(['./core.js', './md5.js'], function(ZU, md5) {
         return false;
     };
 
-    // ***匹配国内电话号码(0511-4405222 或 021-87888822) *** //
-    // str：固定电话号码
+    /**
+    * 匹配国内电话号码(0511-4405222 或 021-87888822)
+    *
+    * @method verifyTelephone
+    * @param {string} str 固定电话号码
+    * @return {boolean} 是否匹配
+    */
     ZU.verifyTelephone = function(str) {
         var result = str.match(/\d{3}-\d{8}|\d{4}-\d{7}/);
 
@@ -183,8 +243,13 @@ define(['./core.js', './md5.js'], function(ZU, md5) {
         return true;
     };
 
-    // ***判断输入是否是有效的电子邮件*** //
-    // str：电子邮箱地址
+    /**
+    * 判断输入是否是有效的电子邮件
+    *
+    * @method verifyEmail
+    * @param {string} str 电子邮箱地址
+    * @return {boolean} 是否是有效的电子邮件
+    */
     ZU.verifyEmail = function(str) {
         var result = str.match(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/);
 
@@ -195,9 +260,14 @@ define(['./core.js', './md5.js'], function(ZU, md5) {
         return true;
     };
 
-    // ***字符串超出省略*** //
-    // str：字符串
-    // len: 保留的位数
+    /**
+    * 字符串超出省略
+    *
+    * @method cutString
+    * @param {string} str 字符串
+    * @param {number} len 保留的长度
+    * @return {string} 字符串
+    */
     ZU.cutString = function(str, len) {
         var wlength = str.replace(/[^\x00-\xff]/g, '**').length;
 
@@ -213,17 +283,26 @@ define(['./core.js', './md5.js'], function(ZU, md5) {
         return str;
     };
 
-    // ***字符串替换全部*** //
-    // str：字符串
-    // s1: 需要替换的词
-    // s2：替换后的词
+    /**
+    * 字符串替换全部
+    *
+    * @method stringReplaceAll
+    * @param {string} str 字符串
+    * @param {string} s1 需要替换的词
+    * @param {string} s2 替换后的词
+    * @return {string} 字符串
+    */
     ZU.stringReplaceAll = function(str, s1, s2) {
         return str.replace(new RegExp(s1, 'gm'), s2);
     };
 
-
-    // ***判断是否为网址*** //
-    // strUrl：网址字符串
+    /**
+    * 判断是否为网址
+    *
+    * @method isURLString
+    * @param {string} strUrl 网址字符串
+    * @return {boolean} 是否为网址
+    */
     ZU.isURLString = function(strUrl) {
         var regular = /^\b(((https?|ftp):\/\/)?[-a-z0-9]+(\.[-a-z0-9]+)*\.(?:com|edu|gov|int|mil|net|org|biz|info|name|museum|asia|coop|aero|[a-z][a-z]|((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]\d)|\d))\b(\/[-a-z0-9_:\@&?=+,.!\/~%\$]*)?)$/i;
 
@@ -234,8 +313,13 @@ define(['./core.js', './md5.js'], function(ZU, md5) {
         }
     };
 
-    // ***获取字符串数值部分*** //
-    // str：字符串
+    /**
+    * 获取字符串数值部分
+    *
+    * @method getNumberFromString
+    * @param {string} str 字符串
+    * @return {number} 数值部分
+    */
     ZU.getNumberFromString = function(str) {
         var value = str.replace(/[^(0-9).]/ig, '');
         return parseFloat(value);

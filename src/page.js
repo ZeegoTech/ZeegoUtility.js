@@ -1,7 +1,18 @@
+/**
+* 网页，浏览器相关的操作库
+*
+* @class ZU.Page
+*/
+
 define(['./core.js'], function(ZU) {
 
-    // ***从网页地址里获取地址参数的值*** //
-    // name：参数的名字
+    /**
+    * 从网页地址里获取地址参数的值
+    *
+    * @method getQueryString
+    * @param {string} name 参数的名字
+    * @return {string} 参数的值
+    */
     ZU.getQueryString = function(name) {
         var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)');
         var r = window.location.search.substr(1).match(reg);
@@ -13,36 +24,14 @@ define(['./core.js'], function(ZU) {
         }
     };
 
-    // ***设置cookie值*** //
-    // name：cookie的名字
-    // value：cookie的值
-    // hours：保存时间，小时
-    // domain：所在域名：例:zeego.cn
-    ZU.setCookie = function(name, value, hours, domain) {
-        var d = new Date();
-        var offset = 8;
-        var utc = d.getTime() + (d.getTimezoneOffset() * 60000);
-        var nd = utc + (3600000 * offset);
-        var exp = new Date(nd);
-        exp.setTime(exp.getTime() + hours * 60 * 60 * 1000);
-        document.cookie = name + '=' + escape(value) + ';path=/;expires=' + exp.toGMTString() + ';domain=' + domain + ';'
-    };
-
-    // ***获取cookie值*** //
-    // name：cookie的名字
-    ZU.getCookie = function(name) {
-        var arr = document.cookie.match(new RegExp('(^| )' + name + '=([^;]*)(;|$)'));
-
-        if (arr != null) {
-            return unescape(arr[2]);
-        }
-
-        return null;
-    };
-
-    // ***加入收藏夹*** //
-    // sURL：收藏链接地址
-    // sTitle：收藏标题
+    /**
+    * 加入收藏夹
+    *
+    * @method addFavorite
+    * @param {string} sURL 收藏链接地址
+    * @param {string} sTitle 收藏标题
+    * @return {void} 加入失败会alert
+    */
     ZU.addFavorite = function(sURL, sTitle) {
         try {
             window.external.addFavorite(sURL, sTitle);
@@ -55,8 +44,13 @@ define(['./core.js'], function(ZU) {
         }
     };
 
-    // ***设为首页*** //
-    // homeurl：链接地址
+    /**
+    * 设为首页
+    *
+    * @method setHomepage
+    * @param {string} homeurl 链接地址
+    * @return {void} 加入失败会alert
+    */
     ZU.setHomepage = function(homeurl) {
 
         if (document.all) {
@@ -77,7 +71,12 @@ define(['./core.js'], function(ZU) {
         }
     };
 
-    // ***判断是否移动设备访问*** //
+    /**
+    * 判断是否移动设备访问
+    *
+    * @method isMobileDevice
+    * @return {boolean}
+    */
     ZU.isMobileDevice = function () {
         return (/iphone|ipod|android.*mobile|windows.*phone|blackberry.*mobile/i.test(window.navigator.userAgent.toLowerCase()));
     };

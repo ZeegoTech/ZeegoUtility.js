@@ -9,6 +9,11 @@
 开发测试：`cnpm start`，会启动一个webpack dev server，代码有改动，页面自动刷新。测试地址：localhost:8080<br/>
 编译打包：`cnpm run build`<br/>
 
+## 如何生成文档
+安装YUIDoc `cnpm install -g yuidoc`<br/>
+进入根目录，执行`yuidoc . -o ./doc`<br/>
+
+
 
 
 

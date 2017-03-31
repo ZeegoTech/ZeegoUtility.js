@@ -1,8 +1,19 @@
+/**
+* 日期相关的操作库
+*
+* @class ZU.Datetime
+*/
+
 define(['./core.js'], function(ZU) {
 
-    // ***格式化日期 formatDate('yyyy_MM_dd hh:mm:ss:SS 星期w 第q季度')*** //
-    // format：格式'yyyy_MM_dd hh:mm:ss:SS 星期w 第q季度'
-    // date：要转化的日期，留空则为当前日期
+    /**
+    * 格式化日期 formatDate('yyyy_MM_dd hh:mm:ss:SS 星期w 第q季度')
+    *
+    * @method formatDate
+    * @param {string} format 格式'yyyy_MM_dd hh:mm:ss:SS 星期w 第q季度'
+    * @param {date} date 要转化的日期，留空则为当前日期
+    * @return {string} 格式化后的字符串
+    */
     ZU.formatDate = function(format, date) {
 
         if (!date) {

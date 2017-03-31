@@ -1,7 +1,18 @@
+/**
+* 数组相关的操作库
+*
+* @class ZU.Array
+*/
+
 define(['./core.js'], function(ZU) {
 
-    // ***删除数组中存在重复的元素*** //
-    // someArray：数组
+    /**
+    * 删除数组中存在重复的元素
+    *
+    * @method getUniqueArray
+    * @param {Array} someArray 数组
+    * @return {Array} 删除重复后的数组
+    */
     ZU.getUniqueArray = function (someArray) {
         var tempArray = someArray.slice(0); // 复制数组到临时数组
 
@@ -23,8 +34,13 @@ define(['./core.js'], function(ZU) {
         return tempArray;
     };
 
-    // ***判断数组中是否存在重复的元素*** //
-    // someArray：数组
+    /**
+    * 判断数组中是否存在重复的元素
+    *
+    * @method ifRepeatInArray
+    * @param {Array} someArray 数组
+    * @return {boolean} 是否存在重复
+    */
     ZU.ifRepeatInArray = function (someArray) {
         var tempArray = someArray.slice(0); // 复制数组到临时数组
 
@@ -46,9 +62,14 @@ define(['./core.js'], function(ZU) {
         return false;
     }
 
-    // ***判断某个值是否在数组中*** //
-    // someArray：数组
-    // value: 数组项的值
+    /**
+    * 判断某个值是否在数组中
+    *
+    * @method isInArray
+    * @param {Array} someArray 数组
+    * @param {object} value 值
+    * @return {boolean} 是否在数组中
+    */
     ZU.isInArray = function (someArray, value) {
 
         for (var i = 0; i < someArray.length; i++) {
@@ -61,14 +82,19 @@ define(['./core.js'], function(ZU) {
         return false;
     };
 
-    // ***判断某个值在数组中的位置*** //
-    // someArray：数组
-    // value: 数组项的值
+    /**
+    * 判断某个值在数组中的位置
+    *
+    * @method indexInArray
+    * @param {Array} someArray 数组
+    * @param {object} value 值
+    * @return {number} 在数组中的位置
+    */
     ZU.indexInArray = function (someArray, value) {
 
         for (var i = 0; i < someArray.length; i++) {
 
-            if (someArray[i] == e) {
+            if (someArray[i] == value) {
                 return i;
             }
         }
